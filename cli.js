@@ -56,6 +56,9 @@ const days = args.d;
 
 if (args.j) {
 	console.log(data);
+	if (!latitude) {
+		console.log("Latitude must be in range");
+	}
 	process.exit(0);
 }
 
