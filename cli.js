@@ -52,6 +52,13 @@ const data = await response.json();
 
 const days = args.d;
 
+// if j, exit
+
+if (args.j) {
+	console.log(data);
+	process.exit(0);
+}
+
 // create extra response text
 
 if (days == 0) {
@@ -70,5 +77,9 @@ if (days == 0) {
 	}
 } else {
  	console.log("tomorrow.")
-	console.log("Don't bring your umbrella");
+	if (data.daily.precipitation_hours[days] = 0) {
+		console.log("Don't bring your umbrella");
+	} else {
+		console.log("Bring your umbrella");
+	}
 }
