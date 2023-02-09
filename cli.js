@@ -60,15 +60,15 @@ if (days == 0) {
 	} else {
 		console.log("Bring your umbrella");
 	}
-} else if (days == 1) {
- 	console.log("tomorrow.")
-	if (data.daily.precipitation_hours[1] = 0) {
+} else if (days > 1) {
+  	console.log("in " + days + " days.")
+	if (data.daily.precipitation_hours[days] = 0) {
 		console.log("Don't bring your umbrella");
 	} else {
 		console.log("Bring your umbrella");
 	}
-} else if (days > 1) {
-  	console.log("in " + days + " days.")
+} else {
+ 	console.log("tomorrow.")
 	if (data.daily.precipitation_hours[days] = 0) {
 		console.log("Don't bring your umbrella");
 	} else {
