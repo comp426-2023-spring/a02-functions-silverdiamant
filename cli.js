@@ -26,19 +26,8 @@ const timezone = moment.tz.guess();
 
 // make and set latitude and longitude
 
-let latitude;
-if (args.n) {
-	latitude = args.n;
-} else if (args.s) {
-	latitude = -args.s;
-}
-
-let longitude;
-if (args.e) {
-	longitude = args.e;
-} else if (args.w) {
-	longitude = -args.w;
-}
+const longitude = args.e || args.w * -1;
+const latitude = args.n || args.s * -1;
 
 // Make a request
 
@@ -71,6 +60,13 @@ if (days == 0) {
 	} else {
 		console.log("Bring your umbrella");
 	}
+} else if (days == 1) {
+ 	console.log("tomorrow.")
+	if (data.daily.precipitation_hours[days] = 0) {
+		console.log("Don't bring your umbrella");
+	} else {
+		console.log("Bring your umbrella");
+	}
 } else if (days > 1) {
   	console.log("in " + days + " days.")
 	if (data.daily.precipitation_hours[days] = 0) {
@@ -78,11 +74,4 @@ if (days == 0) {
 	} else {
 		console.log("Bring your umbrella");
 	}
-} else {
- 	console.log("tomorrow.")
-	if (data.daily.precipitation_hours[days] = 0) {
-		console.log("Don't bring your umbrella");
-	} else {
-		console.log("Bring your umbrella");
-	}
-}
+} 
