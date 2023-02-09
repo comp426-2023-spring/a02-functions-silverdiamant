@@ -70,9 +70,5 @@ if (days == 0) {
 	}
 } else {
  	console.log("tomorrow.")
-	if (data.daily.precipitation_hours[1] = 0) {
-		console.log("Don't bring your umbrella");
-	} else {
-		console.log("Bring your umbrella");
-	}
+	console.log("Don't bring your umbrella");
 }
