@@ -42,7 +42,7 @@ if (args.e) {
 
 // Make a request
 
-const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&current_weather=true&temperature_unit=fahrenheit&timezone=' + timezone)
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone)
 
 // Get the data from the request
 
@@ -56,7 +56,7 @@ const days = args.d;
 
 if (days == 0) {
 	console.log("today.")
-	if (data.daily.precipitation_hours[days] = 0) {
+	if (data.daily.precipitation_hours[0] = 0) {
 		console.log("Don't bring your umbrella");
 	} else {
 		console.log("Bring your umbrella");
@@ -70,7 +70,7 @@ if (days == 0) {
 	}
 } else {
  	console.log("tomorrow.")
-	if (data.daily.precipitation_hours[days] = 0) {
+	if (data.daily.precipitation_hours[1] = 0) {
 		console.log("Don't bring your umbrella");
 	} else {
 		console.log("Bring your umbrella");
